@@ -1,19 +1,16 @@
-doctype html 
-html
-	head 
-		meta(charset="UFT-8")
-		link(rel="stylesheet", href="/css/ejercicio-pug.css")
-	body 
-		header 
-			h1 PlatziGames 
-			a.boton Registro
-		section.intro 
-			.intro__imagen: img(src="/images/imagen.png", alt="alt")
-			.intro__contenido 
-				h2 Titulo Principal 
-				p 
+extend componentes/plantilla.pug
+block contenidos
+	section.intro 
+		.intro__imagen: img(src="/images/imagen.png" alt="alt")
+		.intro__contenido 
+			h2 #{titulos[0]} 
+			p 
 				| Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 				| sed do eiusmod    tempor incididunt ut 
 				| labore et dolore magna aliqua.
 				span Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-				a.boton Leer Mas
+			a.boton Leer Mas		
+	main.contenido
+		+caja('imagen.png', titulos[1], 'Lorem ipsum dolor sit amet consectetur, adipisicing elit')
+		+caja('imagen.png', titulos[2], 'Lorem ipsum dolor sit amet consectetur, adipisicing elit')
+		+caja('imagen.png', titulos[3], 'Lorem ipsum dolor sit amet consectetur, adipisicing elit')
